@@ -129,7 +129,8 @@
           let result = eval(expression);
           input.value = result;
         } catch (error) {
-          input.value="Invalid expression";
+          alert("Invalid expression")
+          input.value = '';
         }
       }
       
