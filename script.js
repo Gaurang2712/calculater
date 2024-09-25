@@ -64,31 +64,64 @@
     });
 
     addition.addEventListener('click', function (event) {
-        input.value+='+';
+        if (input.value.slice(-1) === '+' ||input.value.slice(-1) === '-' ||input.value.slice(-1) === '*' || input.value.slice(-1) === '/' || input.value == '')
+            {
+               console.log("Operator '*' already present"); // Optional: handle as desired
+           } else {
+               input.value += '+';
+           }
     }); 
 
     subtraction.addEventListener('click', function (event) {    
-        input.value+='-';   
+        if (input.value.slice(-1) === '+' ||input.value.slice(-1) === '-' ||input.value.slice(-1) === '*' || input.value.slice(-1) === '/' || input.value == '')
+            {
+               console.log("Operator '*' already present"); // Optional: handle as desired
+           } else {
+               input.value += '-';
+           } 
     });
 
     multiply.addEventListener('click', function (event) {
-        input.value+='*';
+        if (input.value.slice(-1) === '+' ||input.value.slice(-1) === '-' ||input.value.slice(-1) === '*' || input.value.slice(-1) === '/' || input.value == '')
+            {
+               console.log("Operator '*' already present"); // Optional: handle as desired
+           } else {
+               input.value += '*';
+           }
     });
 
     divide.addEventListener('click', function (event) {
-        input.value+='/';
+        if (input.value.slice(-1) === '+' ||input.value.slice(-1) === '-' ||input.value.slice(-1) === '*' || input.value.slice(-1) === '/' || input.value == '')
+            {
+               console.log("Operator '/' already present"); // Optional: handle as desired
+           } else {
+               input.value += '/';
+           }
     });
 
+   // Event listener for square operator
     sq.addEventListener('click', function (event) {
-        input.value+='**';
+    // Check if the last two characters are already '**'
+    if (input.value.slice(-1) === '+' ||input.value.slice(-1) === '-' ||input.value.slice(-1) === '*' || input.value.slice(-1) === '/' || input.value == '' ||input.value.slice(-2) === '**' || input.value == '')
+     {
+        console.log("Operator '**' already present"); // Optional: handle as desired
+    } else {
+        input.value += '**';
+    }
     });
+
 
     backspace.addEventListener('click', function (event) {
         input.value=input.value.slice(0,-1);
     }); 
     
     answer.addEventListener('click', function (event) {
-        evaluateExpression(input.value);
+        if (input.value == ''){
+
+        }
+        else{
+           evaluateExpression(input.value);
+        }
     }); 
    
     function evaluateExpression(expression) {
